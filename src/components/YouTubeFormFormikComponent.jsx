@@ -1,5 +1,5 @@
 import React from 'react'
-import {Formik, Form, Field, ErrorMessage, FieldArray} from 'formik'
+import {Formik, Form, Field, ErrorMessage, FieldArray, FastField} from 'formik'
 import * as Yup from 'yup'
 import TextError from './TextError'
 
@@ -57,7 +57,7 @@ function YouTubeFormFormikComponent() {
 
                 <div className='form-control'>
                     <label htmlFor="channel">Canal</label>
-                    <Field type="text" id="channel" name="channel" />
+                    <Field type="text" id="channel" name="channel" />                    
                     <ErrorMessage name='channel'/>
                 </div>
 
@@ -68,10 +68,10 @@ function YouTubeFormFormikComponent() {
 
                 <div className='form-control'>
                     <label htmlFor='address'>Direccion</label>
-                    <Field as='textarea' id='address' name='address' >
+                    <FastField  name='address' >
                         {(props)=>{
-                            const {field, form, meta}= props
-                            console.log('render props', props);
+                            console.log("render");
+                            const {field, form, meta}= props                            
                             return (
                                 <div>
                                     <input type='text' id='address' {...field}/>
@@ -80,7 +80,7 @@ function YouTubeFormFormikComponent() {
                             )
                             
                         }}
-                    </Field>
+                    </FastField>
                 </div>
 
                 <div className='form-control'>
