@@ -48,9 +48,11 @@ function YouTubeForm() {
                         type="text" 
                         id="name" 
                         name="name" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur}
-                        value={formik.values.name}
+                        // onChange={formik.handleChange} 
+                        // onBlur={formik.handleBlur}
+                        // value={formik.values.name}
+                        //con formik.getFieldProps estamos incluyendo onChange, onBlur y value
+                        {...formik.getFieldProps('name')}
                     />
                     {formik.touched.name && formik.errors.name ? <div className='error'>{formik.errors.name}</div>: null}
                 </div>
@@ -61,9 +63,10 @@ function YouTubeForm() {
                         type="email" 
                         id="email" 
                         name="email" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur}
-                        value={formik.values.email}
+                        // onChange={formik.handleChange} 
+                        // onBlur={formik.handleBlur}
+                        // value={formik.values.email}
+                        {...formik.getFieldProps('email')}
                     />
                     {formik.touched.email && formik.errors.email ? <div className='error'>{formik.errors.email}</div>: null}
                 </div>
@@ -74,9 +77,10 @@ function YouTubeForm() {
                         type="text" 
                         id="channel" 
                         name="channel" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur}
-                        value={formik.values.channel}
+                        // onChange={formik.handleChange} 
+                        // onBlur={formik.handleBlur}
+                        // value={formik.values.channel}
+                        {...formik.getFieldProps('channel')}
                     />
                     {formik.touched.channel && formik.errors.channel ? <div className='error'>{formik.errors.channel}</div>: null}
                 </div>

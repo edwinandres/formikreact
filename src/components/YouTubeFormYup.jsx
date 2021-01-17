@@ -40,9 +40,9 @@ function YouTubeFormYup() {
 
     const formik = useFormik({
         initialValues,
-        onSubmit,
-        //validate
+        onSubmit,        
         validationSchema
+        //validate
     })
 
     console.log('Visited fields: ' , formik.touched);
